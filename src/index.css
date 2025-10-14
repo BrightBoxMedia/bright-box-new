@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+body {
+  /* background-color: rgb(20, 20, 20); */
+  background-color: #FFFAF0; 
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: auto;
+}
+
+@layer utilities {
+  .spotlight {
+    position: absolute;
+    pointer-events: none;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center, rgba(255, 0, 128, 0.2), transparent 60%);
+    mix-blend-mode: lighten;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
