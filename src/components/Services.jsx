@@ -1,9 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Services({ Sref }) {
+  const navigate = useNavigate();
   const handleClick = () => {
-    // Navigate to services page
-    console.log("Navigate to /services");
+    navigate("/services");
   };
 
   const categories = [
