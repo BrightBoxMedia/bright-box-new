@@ -287,10 +287,10 @@ export default function Hero({ servicesRef }) {
   }, [isVideoInView]);
 
   return (
-    <div className="text-black relative mt-22 sm:mt-24 lg:mt-10">
+    <div className="text-black relative mt-24 sm:mt-28 lg:mt-10">
       <AnimatedLines />
       <div className={`${isMobile ? "h-screen" : "h-[200vh]"}`}>
-        <div className="max-w-[1240px] mx-auto px-4 w-full h-screen flex items-center justify-center sticky top-0 pb-30">
+        <div className="max-w-[1240px] mx-auto px-4 w-full h-screen flex items-center justify-center sticky top-0 pb-30 pt-4 sm:pt-8 lg:pt-0">
           {/* Main Content Container */}
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full relative min-h-0 overflow-visible gap-8 lg:gap-0">
             {/* Left Column - Text and Buttons */}
@@ -393,10 +393,10 @@ export default function Hero({ servicesRef }) {
             {/* Right Column - Video */}
             <div
               ref={videoContainerRef}
-              className="w-full lg:w-1/2 flex justify-center items-center relative order-1 lg:order-2"
+              className="w-full lg:w-1/2 flex justify-center items-center relative order-1 lg:order-2 px-2"
               style={{ zIndex: isMobile ? 50 : 10 }}
             >
-              <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[900px] flex justify-center items-center">
+              <div className="relative w-full max-w-[350px] sm:max-w-[450px] lg:max-w-[900px] flex justify-center items-center">
                 <video
                   ref={videoRef}
                   className="w-full h-auto relative rounded-2xl shadow-2xl"
@@ -409,7 +409,7 @@ export default function Hero({ servicesRef }) {
                     zIndex: isMobile ? 50 : 100,
                     position: "relative",
                     // filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))",
-                    maxHeight: "85vh",
+                    maxHeight: isMobile ? "45vh" : "85vh",
                     transform: `scale(${PARALLAX_CONFIG.INITIAL_SCALE})`,
                   }}
                   aria-label="Hero demonstration video"
